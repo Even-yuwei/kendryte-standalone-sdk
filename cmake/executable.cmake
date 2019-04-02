@@ -26,7 +26,12 @@ target_link_libraries(${PROJECT_NAME}
         -Wl,--no-whole-archive
         -Wl,--end-group
         )
-        
+
+if (EXISTS ${SDK_ROOT}/../${PROJ}/project.cmake)
+    include(${SDK_ROOT}/../${PROJ}/project.cmake)
+endif ()
+
+
 if (EXISTS ${SDK_ROOT}/src/${PROJ}/project.cmake)
     include(${SDK_ROOT}/src/${PROJ}/project.cmake)
 endif ()
